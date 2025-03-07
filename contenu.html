@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booklet - Les Leaders</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+
+    /* Navigation Tabs */
+    .tab {
+      display: flex;
+      background: #007BFF;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .tab button {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      background: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tab button:hover,
+    .tab button.active {
+      background: #0056b3;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .question {
+      font-weight: bold;
+      margin-top: 15px;
+      color: #0056b3;
+    }
+
+    .instructions {
+      font-style: italic;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .input-field,
+    .text-area {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .text-area {
+      resize: vertical;
+      height: 80px;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .tab button {
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      .input-field,
+      .text-area {
+        font-size: 12px;
+        padding: 8px;
+      }
+
+      .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tab button {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .input-field,
+      .text-area {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      .submit-btn {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Booklet - Les Leaders</h1>
+
+    <!-- Navigation Tabs -->
+    <div class="tab">
+        <button class="tab-btn active" onclick="openTab(event, 'decouverte')">Découverte de soi</button>
+        <button class="tab-btn" onclick="openTab(event, 'valeurs')">Valeurs</button>
+        <button class="tab-btn" onclick="openTab(event, 'causes')">Causes</button>
+        <button class="tab-btn" onclick="openTab(event, 'ambitions')">Ambitions</button>
+    </div>
+
+    <!-- DÉCOUVERTE DE SOI (IKIGAI) -->
+    <div id="decouverte" class="tab-content active">
+        <h2>À la découverte de soi (IKIGAI)</h2>
+
+        <p class="instructions">
+          <em>
+            Instructions tirées du livret: “Chacun écrit sur son cahier les 3 mots (tag) 
+            que vous voudriez que les gens retiennent de vous, puis détaillez les actions 
+            quotidiennes qui justifient ces mots. Enfin, évaluez votre fiabilité 
+            (êtes-vous une personne de confiance ? pourquoi ?).”
+          </em>
+        </p>
+
+        <p class="question">1. Chacun écrit les 3 mots (tags) qui vous définissent :</p>
+        <input type="text" class="input-field" placeholder="Mot 1" />
+        <input type="text" class="input-field" placeholder="Mot 2" />
+        <input type="text" class="input-field" placeholder="Mot 3" />
+
+        <p class="question">2. Quelles sont les actions du quotidien qui prouvent ces mots ?</p>
+        <textarea class="text-area" placeholder="Décrivez vos actions quotidiennes..."></textarea>
+
+        <p class="question">3. Êtes-vous une personne de confiance ? Pourquoi ou pourquoi pas ?</p>
+        <textarea class="text-area" placeholder="Expliquez ici..."></textarea>
+
+        <p class="question">4. Quels sont les mots que vos collègues/amis ont écrits à votre sujet ?</p>
+        <textarea class="text-area" placeholder="Notez leurs retours..."></textarea>
+
+        <p class="question">5. Comment construire votre réputation autour de ces mots-clés ?
+           Même si vous n’êtes pas encore aujourd’hui ce que vous voulez devenir...</p>
+        <textarea class="text-area" placeholder="Stratégie pour développer votre réputation..."></textarea>
+    </div>
+
+    <!-- VALEURS -->
+    <div id="valeurs" class="tab-content">
+        <h2>Les Valeurs</h2>
+
+        <p class="instructions">
+          <em>
+            Réflexion individuelle: Quelles sont vos 5 valeurs clés sur lesquelles vous vivez au 
+            quotidien ? Notez ces valeurs, puis discutez en groupe pour observer les écarts 
+            ou similitudes.
+          </em>
+        </p>
+
+        <p class="question">1. Quelles sont vos 5 valeurs clés ?</p>
+        <input type="text" class="input-field" placeholder="Valeur 1" />
+        <input type="text" class="input-field" placeholder="Valeur 2" />
+        <input type="text" class="input-field" placeholder="Valeur 3" />
+        <input type="text" class="input-field" placeholder="Valeur 4" />
+        <input type="text" class="input-field" placeholder="Valeur 5" />
+
+        <p class="question">2. Comment les autres vous perçoivent-ils ? (Débrief en groupe sur les écarts et similitudes)</p>
+        <textarea class="text-area" placeholder="Notes sur les retours du groupe..."></textarea>
+
+        <p class="instructions">
+          <em>
+            Ce que nous apprenons : “Nos valeurs nous bâtissent, nous construisent et déterminent 
+            ce qui est important pour nous. Nos valeurs sont ce qui nous retient 
+            ou nous pousse à agir dans certaines situations.”
+          </em>
+        </p>
+
+        <p class="question">3. Que signifie “être exemplaire” pour vous ?</p>
+        <textarea class="text-area" placeholder="Votre définition de l'exemplarité..."></textarea>
+
+        <p class="question">4. Comment pouvez-vous devenir exemplaire ?</p>
+        <textarea class="text-area" placeholder="Vos pistes d'amélioration..."></textarea>
+
+        <p class="question">5. Que voulez-vous apprendre pour devenir exemplaire ?</p>
+        <textarea class="text-area" placeholder="Compétences, qualités à développer..."></textarea>
+    </div>
+
+    <!-- CAUSES -->
+    <div id="causes" class="tab-content">
+        <h2>Les Causes</h2>
+
+        <p class="instructions">
+          <em>
+            “Y a-t-il des causes qui te tiennent à cœur sur lesquelles tu veux œuvrer ? 
+            Quelles sont les actions concrètes que tu fais déjà aujourd’hui pour ces causes ?”
+          </em>
+        </p>
+
+        <p class="question">1. Quelles causes vous tiennent particulièrement à cœur ?</p>
+        <input type="text" class="input-field" placeholder="Cause 1" />
+        <input type="text" class="input-field" placeholder="Cause 2" />
+        <input type="text" class="input-field" placeholder="Cause 3" />
+
+        <p class="question">2. Quelles actions prouvent votre engagement actuel ?</p>
+        <textarea class="text-area" placeholder="Détails de vos actions concrètes..."></textarea>
+
+        <p class="question">3. Souhaitez-vous vous engager davantage (par exemple, dans le mois à venir) ? Comment ?</p>
+        <textarea class="text-area" placeholder="Vos idées d'engagement futur..."></textarea>
+
+        <p class="instructions">
+          <em>
+            Ce que nous apprenons : “Être engagé ne signifie pas forcément faire de grandes choses 
+            ou se consacrer à 100%. On peut commencer par de petites actions, comme s’informer 
+            régulièrement, échanger avec les autres, etc.”
+          </em>
+        </p>
+    </div>
+
+    <!-- AMBITIONS -->
+    <div id="ambitions" class="tab-content">
+        <h2>Les Ambitions</h2>
+        <p class="instructions">
+          <em>
+            Enfin, identifiez vos objectifs à moyen/long terme et réfléchissez aux actions 
+            concrètes pour y parvenir.
+          </em>
+        </p>
+
+        <p class="question">1. Quels sont vos objectifs pour les 5 prochaines années ?</p>
+        <textarea class="text-area" placeholder="Listez vos objectifs personnels, professionnels..."></textarea>
+
+        <p class="question">2. Quelles actions devez-vous entreprendre pour les atteindre ?</p>
+        <textarea class="text-area" placeholder="Actions concrètes, étapes clés..."></textarea>
+
+        <p class="question">3. Quelles sont vos motivations profondes derrière ces objectifs ?</p>
+        <textarea class="text-area" placeholder="Les raisons, la passion, la vision..."></textarea>
+    </div>
+
+    <button class="submit-btn">Soumettre</button>
+</div>
+
+<script>
+    function openTab(event, tabName) {
+        let i, tabcontent, tabbuttons;
+
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+
+        tabbuttons = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbuttons.length; i++) {
+            tabbuttons[i].classList.remove("active");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        event.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>

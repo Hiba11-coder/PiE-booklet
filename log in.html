@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion</title>
+<style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #007BFF, #00c6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+            border-radius: 15px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 18;
+            color: #007BFF;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .login-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 13px 45px;
+            font-size: 17px;
+            background: white;
+            color: #007BFF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(254, 251, 251, 0.3);
+            width: 200px;
+        }
+        .login-btn:hover{
+            background: #c7c7ca;
+            /* transform: scale(1.1); */
+        }
+       
+
+</style>
+</head>
+<body>
+<div class="login-container">
+<h2>Accéder au formulaire</h2>
+<form id="login-form">
+    <div class="input-group">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
+    </div>
+    <div class="input-group">
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" required>
+    </div>
+    <div class="input-group">
+        <label for="sec">Section:</label>
+        <input type="text" id="sec" name="sec" required>
+    </div>
+    <div class="input-group">
+        <label for="grp">Groupe:</label>
+        <input type="text" id="grp" name="grp" required>
+    </div>
+    <button type="submit" class="login-btn">Continuer</button>
+</form>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche la soumission du formulaire pour contrôler la validation
+        if (this.checkValidity()) {
+            // Si le formulaire est valide, rediriger vers la page suivante
+            window.location.href = "contenu.html"; // Remplacez par l'URL vers la page de destination
+        }
+    });
+</script>
+</div>
+</body>
+</html>
